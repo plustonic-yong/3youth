@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:goh/screens/home_screen.dart';
+import 'package:goh/screens/auth/sign_in.dart';
 import 'package:goh/utils/const.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -96,7 +96,7 @@ class MyApp extends StatelessWidget {
       theme: Constants.lighTheme(context),
       debugShowCheckedModeBanner: false,
       // home: FirebaseTest(),
-      home: HomeScreen(),
+      home: const SignInScreen(),
     );
   }
 }
