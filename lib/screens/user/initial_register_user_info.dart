@@ -27,8 +27,8 @@ class _InitialRegisterUserInfoState extends State<InitialRegisterUserInfo> {
             Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/main_background1.png'),
-                  fit: BoxFit.cover,
+                  image: AssetImage('assets/images/background.png'),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -145,12 +145,16 @@ class _InitialRegisterUserInfoState extends State<InitialRegisterUserInfo> {
                             height: 50.0,
                             decoration: BoxDecoration(
                               gradient: const LinearGradient(
-                                colors: [
-                                  Color(0XFF3DBFFF),
-                                  Color(0XFF00B1E9),
-                                ],
                                 begin: Alignment.topCenter,
                                 end: Alignment.bottomCenter,
+                                stops: [
+                                  0.05,
+                                  0.5,
+                                ],
+                                colors: [
+                                  Color(0xff46DFFF),
+                                  Color(0xff00B1E9),
+                                ],
                               ),
                               boxShadow: const [
                                 BoxShadow(

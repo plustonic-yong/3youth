@@ -23,8 +23,8 @@ class _SignInScreenState extends State<SignInScreen> {
             Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/main_background1.png'),
-                  fit: BoxFit.cover,
+                  image: AssetImage('assets/images/background.png'),
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -130,16 +130,20 @@ class _SignInScreenState extends State<SignInScreen> {
                         );
                       },
                       child: Container(
-                        width: 190.0,
+                        width: 220.0,
                         height: 50.0,
                         decoration: BoxDecoration(
                           gradient: const LinearGradient(
-                            colors: [
-                              Color(0XFF3DBFFF),
-                              Color(0XFF00B1E9),
-                            ],
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
+                            stops: [
+                              0.05,
+                              0.5,
+                            ],
+                            colors: [
+                              Color(0xff46DFFF),
+                              Color(0xff00B1E9),
+                            ],
                           ),
                           boxShadow: const [
                             BoxShadow(
@@ -164,13 +168,98 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                     const SizedBox(height: 40.0),
                     const Text(
-                      '회원가입',
+                      'SNS 회원가입',
                       style: TextStyle(
                         color: Colors.white,
-                        decoration: TextDecoration.underline,
                         fontSize: 20.0,
                       ),
                     ),
+                    const SizedBox(height: 20.0),
+                    //카카오 회원가입
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        width: 220.0,
+                        height: 50.0,
+                        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xff00000026).withOpacity(0.15),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(
+                                6,
+                                8,
+                              ), // changes position of shadow
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/icons/kakao.png',
+                              width: 26.0,
+                              height: 25.0,
+                            ),
+                            const SizedBox(width: 20.0),
+                            const Text(
+                              '카카오 회원가입',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20.0),
+
+                    //네이버 회원가입
+                    GestureDetector(
+                      onTap: () {},
+                      child: Container(
+                        width: 220.0,
+                        height: 50.0,
+                        padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color(0xff00000026).withOpacity(0.15),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(
+                                6,
+                                8,
+                              ), // changes position of shadow
+                            ),
+                          ],
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/icons/naver.png',
+                              width: 26.0,
+                              height: 25.0,
+                            ),
+                            const SizedBox(width: 20.0),
+                            const Text(
+                              '네이버 회원가입',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20.0),
                     const Spacer(),
                     Text(
                       '제3의 청춘 주식회사',
