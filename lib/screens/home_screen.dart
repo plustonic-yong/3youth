@@ -37,69 +37,72 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Constants.backgroundColor,
-      body: tabs[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            activeIcon: Image.asset("assets/icons/menu.png",
-                height: Constants.iconSize),
-            // SvgPicture.asset(
-            //   'assets/icons/apps.svg',
-            //   height: 30,
-            //   color: CustomColors.kPrimaryColor,
-            // ),
-            label: "",
-            icon: Image.asset("assets/icons/menu.png",
-                height: Constants.iconSize, color: Colors.grey),
-            // SvgPicture.asset(
-            //   'assets/icons/apps.svg',
-            //   height: 30,
-            //   color: Colors.grey,
-            // ),
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/icons/calendar.png',
-              height: Constants.iconSize,
-              color: Colors.grey,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        backgroundColor: Constants.backgroundColor,
+        body: tabs[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _currentIndex,
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              activeIcon: Image.asset("assets/icons/menu.png",
+                  height: Constants.iconSize),
+              // SvgPicture.asset(
+              //   'assets/icons/apps.svg',
+              //   height: 30,
+              //   color: CustomColors.kPrimaryColor,
+              // ),
+              label: "",
+              icon: Image.asset("assets/icons/menu.png",
+                  height: Constants.iconSize, color: Colors.grey),
+              // SvgPicture.asset(
+              //   'assets/icons/apps.svg',
+              //   height: 30,
+              //   color: Colors.grey,
+              // ),
             ),
-            label: "",
-            activeIcon: Image.asset(
-              'assets/icons/calendar.png',
-              height: Constants.iconSize,
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/icons/calendar.png',
+                height: Constants.iconSize,
+                color: Colors.grey,
+              ),
+              label: "",
+              activeIcon: Image.asset(
+                'assets/icons/calendar.png',
+                height: Constants.iconSize,
+              ),
             ),
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/icons/bar-chart.png',
-                height: Constants.iconSize, color: Colors.grey),
-            label: "",
-            activeIcon: Image.asset(
-              'assets/icons/bar-chart.png',
-              height: Constants.iconSize,
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/icons/bar-chart.png',
+                  height: Constants.iconSize, color: Colors.grey),
+              label: "",
+              activeIcon: Image.asset(
+                'assets/icons/bar-chart.png',
+                height: Constants.iconSize,
+              ),
             ),
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset('assets/icons/setting.png',
-                height: Constants.iconSize, color: Colors.grey),
-            label: "",
-            activeIcon: Image.asset(
-              'assets/icons/setting.png',
-              height: Constants.iconSize,
+            BottomNavigationBarItem(
+              icon: Image.asset('assets/icons/setting.png',
+                  height: Constants.iconSize, color: Colors.grey),
+              label: "",
+              activeIcon: Image.asset(
+                'assets/icons/setting.png',
+                height: Constants.iconSize,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
+        floatingActionButton: MultiFloatButton(),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       ),
-      floatingActionButton: MultiFloatButton(),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

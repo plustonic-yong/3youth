@@ -55,7 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     const SizedBox(height: 30.0),
                     //로고
                     Image.asset(
-                      'assets/icons/menu.png',
+                      'assets/icons/logo.png',
                       width: 110.0,
                     ),
                     const SizedBox(height: 80.0),
